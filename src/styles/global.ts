@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import colors from './colors'
 
 export default createGlobalStyle`
   * {
@@ -14,9 +15,13 @@ export default createGlobalStyle`
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+    background-color: ${colors.dark};
+    color: ${colors.white};
   }
 
-  button {
+  button, input {
     font-size: inherit;
+    outline: none;
+    border: none;
   }
 `
