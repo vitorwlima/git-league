@@ -1,15 +1,13 @@
 import styled from 'styled-components'
-// import colors from '../../styles/colors'
+import { deviceMinWidth } from '../../styles/devices'
 
 export const Wrapper = styled.div`
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 400px;
 
   .searchForm {
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,5 +15,14 @@ export const Wrapper = styled.div`
 
   .searchButton {
     margin-top: 0.2rem;
+    width: 100%;
+  }
+
+  @media ${deviceMinWidth.tablet} {
+    margin: 0 200px;
+
+    .searchForm {
+      width: 100%;
+    }
   }
 `

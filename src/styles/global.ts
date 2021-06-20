@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 import colors from './colors'
+import { deviceMinWidth } from './devices'
 
 export default createGlobalStyle`
   * {
@@ -17,11 +18,18 @@ export default createGlobalStyle`
     sans-serif;
     background-color: ${colors.dark};
     color: ${colors.white};
+    font-size: 1rem;
   }
 
-  button, input {
+  button, input, label {
     font-size: inherit;
     outline: none;
     border: none;
+  }
+
+  @media ${deviceMinWidth.desktop} {
+    body {
+      font-size: 1.5rem;
+    }
   }
 `

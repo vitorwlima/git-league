@@ -1,5 +1,6 @@
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 import colors from '../../styles/colors'
+import { deviceMinWidth } from '../../styles/devices'
 
 interface ContainerProps {
   isFocused: boolean
@@ -10,8 +11,8 @@ export const Container = styled.div<ContainerProps>`
   background: ${colors.lightGray2};
   color: #fff;
 
-  border-radius: 10px;
-  border: 1px solid black;
+  border-radius: 0.3em;
+  border: 1px solid ${colors.darkLetter};
 
   width: 100%;
 
@@ -29,7 +30,6 @@ export const Container = styled.div<ContainerProps>`
     props.isFocused &&
     css`
       color: ${colors.white};
-      border-color: ${colors.white};
     `}
 
   ${(props): false | FlattenSimpleInterpolation =>
@@ -47,17 +47,21 @@ export const Container = styled.div<ContainerProps>`
     padding: 25px 64px 9px 16px;
     transition: all 0.3s ease-out;
 
+    @media ${deviceMinWidth.desktop} {
+      line-height: 40px;
+    }
+
     &::placeholder {
       color: transparent;
     }
 
     &:focus + label {
-      font-size: 12px;
+      font-size: 0.75em;
       margin-top: 8px;
     }
 
     &:not(:placeholder-shown) + label {
-      font-size: 12px;
+      font-size: 0.75em;
       margin-top: 8px;
     }
   }
@@ -73,7 +77,7 @@ export const Container = styled.div<ContainerProps>`
     left: 0;
     margin-top: 18px;
     padding-left: 16px;
-    font-size: 14px;
+    font-size: 0.8em;
     color: ${colors.lightGray};
     transition: all 0.3s ease-out;
   }

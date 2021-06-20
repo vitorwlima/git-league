@@ -7,6 +7,9 @@ export const Container = styled.button`
   padding: 0.75em 4em;
   border-radius: 0.3em;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: background-color 0.3s ease;
 
   &:hover {

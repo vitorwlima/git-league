@@ -3,12 +3,21 @@ import { Wrapper } from './styles'
 
 import Input from '../../components/Input'
 import Button from '../../components/Button'
+import api from '../../services/api'
 
-const index = () => {
+const Home: React.FC = () => {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    console.log('oi', event)
   }
+
+  const getData = async () => {
+    const response = await api.get(
+      `/summoner/v4/summoners/by-name/FERAVITINHOXDXD?api_key=${process.env.REACT_APP_API_KEY}`
+    )
+    console.log(response)
+  }
+
+  getData()
 
   return (
     <Wrapper>
@@ -22,4 +31,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Home
